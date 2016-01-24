@@ -76,6 +76,7 @@ def handle_data(context, data):
             #reset the buy setup and countdown
             context.in_buy_setup = False
             context.in_buy_countdown = False
+            context.buy_cd = 1
 
     if context.buy_seq % 9 == 0:
         log.info('Buy sequence hit')
@@ -91,6 +92,7 @@ def handle_data(context, data):
             #reset the sell countdown and setup
             context.in_sell_countdown = False
             context.in_sell_setup = False
+            context.sell_cd = 1
 
     #Countdown phase
     if context.in_buy_countdown == True:
